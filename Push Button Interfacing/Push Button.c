@@ -21,8 +21,8 @@
 
 
 void main(void) {
-    TRISB=0x7E;
-    TRISD=0xFC;
+    TRISB=0x81; //setting RB0 and RB7 as inputs
+    TRISD=0xFC; //setting RD0 and RD1 as outputs
     PORTB=0x00;
     while(1){
         if(PORTBbits.RB0==1){
