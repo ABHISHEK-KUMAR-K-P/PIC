@@ -1,1 +1,1 @@
-This Repository contains Simple projects done and simulated using PIC16F877A Microcontroller
+This Repository contains Simple projects done and simulated with PIC16F877A Microcontroller
