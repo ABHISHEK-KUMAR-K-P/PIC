@@ -62,26 +62,26 @@ void lcd_initialise()
 }
 
 
-void ReadByteFromEE(const unsigned char address)
+void ReadByteFromEE(const unsigned char address) //function to read data from internal EEPROM
 {
     EEADR = address;       
- 	  EECON1bits.EEPGD = 0;         
-	  EECON1bits.RD = 1 ;       
-	  byte = EEDATA;
+    EECON1bits.EEPGD = 0;         
+    EECON1bits.RD = 1 ;       
+    byte = EEDATA;
 }
 
-void WriteByteToEE(unsigned char data, const unsigned char address)
+void WriteByteToEE(unsigned char data, const unsigned char address) //function to write data into internal EEPROM
 {
          EEADR  = address; 
-	       EEDATA = data;         
+	 EEDATA = data;         
       	 EECON1bits.EEPGD = 0;
-	   	   EECON1bits.WREN = 1;      
+	 EECON1bits.WREN = 1;      
       	 EECON2 = 0x55;  
       	 EECON2 = 0xAA;
-	       EECON1bits.WR = 1;   
+	 EECON1bits.WR = 1;   
          while(PIR2bits.EEIF==0);
          PIR2bits.EEIF = 0;
-	   	   EECON1bits.WR = 0;         
+	 EECON1bits.WR = 0;         
          EECON1bits.WREN = 0;
           
 }
