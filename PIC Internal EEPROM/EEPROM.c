@@ -72,17 +72,17 @@ void ReadByteFromEE(const unsigned char address) //function to read data from in
 
 void WriteByteToEE(unsigned char data, const unsigned char address) //function to write data into internal EEPROM
 {
-         EEADR  = address; 
-	 EEDATA = data;         
-      	 EECON1bits.EEPGD = 0;
-	 EECON1bits.WREN = 1;      
-      	 EECON2 = 0x55;  
-      	 EECON2 = 0xAA;
-	 EECON1bits.WR = 1;   
-         while(PIR2bits.EEIF==0);
-         PIR2bits.EEIF = 0;
-	 EECON1bits.WR = 0;         
-         EECON1bits.WREN = 0;
+    EEADR  = address; 
+    EEDATA = data;         
+    EECON1bits.EEPGD = 0;
+    EECON1bits.WREN = 1;      
+    EECON2 = 0x55;  
+    EECON2 = 0xAA;
+    EECON1bits.WR = 1;   
+    while(PIR2bits.EEIF==0);
+    PIR2bits.EEIF = 0;
+    EECON1bits.WR = 0;         
+    EECON1bits.WREN = 0;
           
 }
 
